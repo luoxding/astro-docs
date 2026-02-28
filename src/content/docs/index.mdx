@@ -1,40 +1,78 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: 服务器知识库
+description: 我的服务器应用笔记、运维记录与技术杂项整理。
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: 记录 · 实践 · 总结 · 自动化
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: 查看运维指南
+      link: /readme/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
+    - text: 参考资料
+      link: /reference/
+      icon: open-book
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## 📚 站点说明
+
+这里记录我的服务器部署经验、Docker 应用、自动化脚本、网络配置、代理设置、
+以及各种技术杂项与踩坑记录。
+
+目标：
+
+- 可搜索
+- 可复现
+- 可自动部署
+- 长期积累
+
+---
+
+## 🚀 内容导航
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="服务器部署" icon="server">
+    Nginx、Docker、反向代理、HTTPS、域名解析等实践记录。
+  </Card>
+
+  <Card title="自动化脚本" icon="terminal">
+    rsync、CI/CD、自动构建发布脚本、定时任务。
+  </Card>
+
+  <Card title="开发环境" icon="pencil">
+    Node、Astro、前端构建、Linux 开发环境。
+  </Card>
+
+  <Card title="知识杂项" icon="open-book">
+    网络原理、系统架构、工具使用笔记。
+  </Card>
+
+  <Card title="实验记录" icon="add-document">
+    各种新技术测试与部署实验过程。
+  </Card>
 </CardGrid>
+
+---
+
+## 🛠 技术栈
+
+- Astro + Starlight
+- Docker Compose
+- 自动 rsync 发布
+- 静态构建部署
+
+---
+
+## 🧠 更新策略
+
+所有笔记：
+
+- 本地编写
+- 自动同步到服务器
+- 容器自动构建
+- 直接上线
+
+这就是本站的工作流。
