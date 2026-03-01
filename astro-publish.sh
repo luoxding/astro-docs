@@ -66,7 +66,7 @@ build_local() {
 
 sync_to_server() {
     echo "===== 同步笔记到服务器 ====="
-    rsync -avz --delete "$LOCAL_DIR/src/content/docs" "$REMOTE_SERVER:$REMOTE_PROJECT_DIR/src/content/docs"
+    rsync -avz --delete "$LOCAL_DIR/src/content/docs/" "$REMOTE_SERVER:$REMOTE_PROJECT_DIR/src/content/docs/"
 }
 
 ###################################
