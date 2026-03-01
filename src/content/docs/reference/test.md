@@ -148,19 +148,21 @@ npm install
 
 ![vaultwarden-backup.service.svg](https://img.isrv.cn/code/vaultwarden-backup.service.svg)
 
-[跳转文章不带后缀](../guides/001)
+## 双层slug
 
-[跳转文章带md后缀](../guides/001.md)
+1. [跳转文章不带后缀](../guides/001)
+
+2. [跳转文章带md后缀](../guides/001.md)
 
 ## 以下这两个不带slug
 
-[跳转文章不带后缀](../guides/002)
+3. [跳转文章不带后缀](../guides/002)
 
-[跳转文章带md后缀](../guides/002.md)
+4. [跳转文章带md后缀](../guides/002.md)
 
 ## 这个直接指向slug
 
-[哈哈](/america88)
+5. [哈哈](/america88)
 
 ---
 
