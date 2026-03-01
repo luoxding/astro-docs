@@ -6,8 +6,8 @@ set -e
 ############################
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 RELEASE_BASE="/opt/server/releases"
-#CURRENT_LINK="/opt/server/current"
-CURRENT_LINK="/opt/1panel/www/sites/docs.isrv.cn/index"
+CURRENT_LINK="/opt/server/current"
+# CURRENT_LINK="/opt/1panel/www/sites/docs.isrv.cn/index"
 BRANCH="main"
 KEEP_RELEASES=5
 
