@@ -8,9 +8,13 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: '时空知识库',
-			social: {
-				github: 'https://github.com/luoxding/astro-docs',
-			},
+			social: [
+				{
+					icon: 'github',
+					label: 'GitHub',
+					href: 'https://github.com/luoxding/astro-docs',
+				},
+			],
 			sidebar: [
 				{
 					label: '简介',
@@ -21,7 +25,7 @@ export default defineConfig({
 				},
 				{
 					label: '指南',
-					autogenerate: { directory: 'guides' , collapsed: true},
+					autogenerate: { directory: 'guides', collapsed: true},
 				},
 				{
 					label: '参考',
