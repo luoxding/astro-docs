@@ -31,7 +31,7 @@ git_pull() {
 
 build_remote() {
     echo "===== 服务器构建 ====="
-    ssh "$REMOTE_SERVER" bash -e -s <<EOF
+    ssh "$REMOTE_SERVER" bash -l -e -s <<EOF
 set -e
 
 cd "$REMOTE_PROJECT_DIR"
