@@ -8,6 +8,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: '时空知识库',
+			social: {
+				github: 'https://github.com/luoxding/astro-docs',
+			},
 			sidebar: [
 				{
 					label: '简介',

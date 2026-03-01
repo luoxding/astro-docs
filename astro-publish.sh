@@ -35,6 +35,8 @@ build_remote() {
     ssh "$REMOTE_SERVER" bash -e -s <<EOF
 set -e
 
+# nvm安装的node需要添加这条
+
 export NVM_DIR="/root/.nvm"
 [ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
 
