@@ -1,4 +1,4 @@
-// @ts-check
+/ collapsed: true/ @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightScrollToTop from 'starlight-scroll-to-top';
@@ -21,11 +21,11 @@ export default defineConfig({
 				},
 				{
 					label: '指南',
-					autogenerate: { directory: 'guides' },
+					autogenerate: { directory: 'guides' , collapsed: true},
 				},
 				{
 					label: '参考',
-					autogenerate: { directory: 'reference' },
+					autogenerate: { directory: 'reference', collapsed: true},
 				},
 			],
 			plugins: [
