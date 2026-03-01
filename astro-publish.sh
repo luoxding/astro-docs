@@ -76,10 +76,11 @@ build_local() {
     echo "本地构建完成: dist/"
 }
 
-sync_to_server() {
-    echo "===== 同步笔记到服务器 ====="
-    rsync -avz --delete "$LOCAL_DIR/src/content/docs/" "$REMOTE_SERVER:$REMOTE_PROJECT_DIR/src/content/docs/"
-}
+## 目前已有git，暂不用rsync
+# sync_to_server() {
+#     echo "===== 同步笔记到服务器 ====="
+#     rsync -avz --delete "$LOCAL_DIR/src/content/docs/" "$REMOTE_SERVER:$REMOTE_PROJECT_DIR/src/content/docs/"
+# }
 
 ###################################
 # 主流程
@@ -93,7 +94,7 @@ read -p "是否执行 git push? [y/N]: " yn
 [[ "$yn" =~ ^[Yy]$ ]] && git_push "update from local"
 
 # 3. 同步笔记
-sync_to_server
+# sync_to_server
 
 # 4. 构建
 if [ "$USE_REMOTE_BUILD" = true ]; then
