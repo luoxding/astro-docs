@@ -6,7 +6,8 @@ set -e
 ###################################
 # LOCAL_DIR="$HOME/Documents/www/docs"          # 本地 Obsidian 笔记/配置目录
 LOCAL_DIR="$HOME/www/astro-docs"          # 本地 Obsidian 笔记/配置目录
-REMOTE_SERVER="us"                             # 远程服务器别名或IP
+# REMOTE_SERVER="us"                             # 远程服务器别名或IP
+REMOTE_SERVER="root@docs.isrv.cn"                             # 远程服务器别名或IP
 REMOTE_PROJECT_DIR="/opt/server/astro-docs"   # 服务器项目目录
 REMOTE_RELEASE_DIR="/opt/server/releases"     # 服务器 release 目录
 SITE_DIR="/opt/1panel/www/sites/docs.isrv.cn/index" # 1Panel site 根目录
