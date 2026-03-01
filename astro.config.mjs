@@ -16,13 +16,13 @@ export default defineConfig({
 				},
 			],
 			sidebar: [
-				{
-					label: '简介',
-					items: [
+				// {
+					// label: '简介',
+					// items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: '服务器笔记', slug: 'readme' },
-					],
-				},
+						{ label: '介绍', slug: 'readme' },
+					// ],
+				// },
 				{
 					label: '指南',
 					autogenerate: { directory: 'guides', collapsed: true},

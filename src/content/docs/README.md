@@ -12,7 +12,7 @@ lastUpdated: 2026-02-22
 本站主要记录我多年来的各种学习笔记，其中大多数为电脑笔记，而这又是绝大部分是服务器的应用笔记记录。
 
 ### Path
-- Local: `/home/ding/Documents/www`
+- Local: `/home/ding/www/astro-docs`
 - Remote: `us:/opt/server/astro-docs`
 - Site: https://docs.isrv.cn/
 - GitHub: https://github.com/luoxding/astro-docs
