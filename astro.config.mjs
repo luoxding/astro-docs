@@ -44,7 +44,7 @@ export default defineConfig({
 					// Visibility threshold (show after scrolling 20% down)
 					threshold: 20,
 					// Customize the SVG icon
-					svgPath: 'M25 42 12 29 42 29Z',
+					svgPath: 'M12 4C10 6 9 8 9 12V18H15V12C15 8 14 6 12 4M10 18L12 22L14 18',
 					svgStrokeWidth: 1,
 					borderRadius: '50',
 					// Show scroll progress ring
