@@ -152,6 +152,16 @@ npm install
 
 [跳转文章带md后缀](../guides/001.md)
 
+## 以下这两个不带slug
+
+[跳转文章不带后缀](../guides/002)
+
+[跳转文章带md后缀](../guides/002.md)
+
+## 这个直接指向slug
+
+[哈哈](/america88)
+
 ---
 
 ## 4. Git 同步与常见坑
