@@ -28,7 +28,7 @@ export default defineConfig({
 			plugins: [
 				starlightScrollToTop({
 					// Button position
-					position: 'left',
+					position: 'right',
 					// Tooltip text (supports I18N)
 					tooltipText: {
 						'en': 'Scroll to top',

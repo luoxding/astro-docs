@@ -31,30 +31,36 @@ git_pull() {
 
 build_remote() {
     echo "===== 服务器构建 ====="
-    ssh "$REMOTE_SERVER" bash -s <<EOF
+    ssh "$REMOTE_SERVER" bash -e -s <<EOF
+set -e
+
 cd "$REMOTE_PROJECT_DIR"
 git fetch origin
 git reset --hard origin/$BRANCH
+
 npm ci
 npm run build
 
-# 创建 timestamp release
+if [ ! -d dist ]; then
+  echo "Build failed: dist not found"
+  exit 1
+fi
+
 TIMESTAMP=\$(date +%Y%m%d_%H%M%S)
 NEW_RELEASE="$REMOTE_RELEASE_DIR/\$TIMESTAMP"
 mkdir -p "\$NEW_RELEASE"
 cp -r dist/* "\$NEW_RELEASE/"
 
-# 清理旧版本
 cd "$REMOTE_RELEASE_DIR"
 ls -dt */ | tail -n +$((KEEP_RELEASES+1)) | xargs -r rm -rf
 
-# 同步到 1Panel site 根目录
 rm -rf "$SITE_DIR"/*
 cp -r "\$NEW_RELEASE/"* "$SITE_DIR/"
 
 echo "===== Deploy Success on Server ====="
 EOF
 }
+
 
 build_local() {
     echo "===== 本地构建 ====="

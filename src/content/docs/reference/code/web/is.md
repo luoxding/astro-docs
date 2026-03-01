@@ -8,6 +8,8 @@ slug: america88
 
 ## 希望我们再也不见面
 
+测试 git add . 能不能递归。
+
 Reference pages are ideal for outlining how things work in terse and clear terms.
 Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what you're documenting.
 
