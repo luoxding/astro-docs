@@ -32,8 +32,11 @@ git_pull() {
 
 build_remote() {
     echo "===== 服务器构建 ====="
-    ssh "$REMOTE_SERVER" bash -l -e -s <<EOF
+    ssh "$REMOTE_SERVER" bash -e -s <<EOF
 set -e
+
+export NVM_DIR="/root/.nvm"
+[ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
 
 cd "$REMOTE_PROJECT_DIR"
 git fetch origin
