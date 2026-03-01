@@ -14,13 +14,13 @@ slug: demo/test1
 ## 1. 环境与版本
 
 - **服务器系统**：Ubuntu / Debian
-    
+  
 - **Node.js**：v24.11.0（注意不要用低版本，VitePress 2.x 需要 >=18）
-    
+  
 - **Yarn**：1.22.x
-    
+  
 - **VitePress**：v1.6.x 或 v2.x
-    
+  
 
 **注意**：低版本 Node 安装 VitePress 会报错：
 
@@ -33,7 +33,7 @@ globby@14.1.0: The engine "node" is incompatible with this module. Expected vers
 ## 2. 服务器部署流程
 
 1. 创建项目目录：
-    
+   
 
 ```bash
 mkdir /www/wwwroot/vitepress
@@ -41,7 +41,7 @@ cd /www/wwwroot/vitepress
 ```
 
 2. 初始化 Node 项目并安装 VitePress：
-    
+   
 
 ```bash
 yarn init -y
@@ -49,7 +49,7 @@ yarn add -D vitepress
 ```
 
 3. 创建必要文件：
-    
+   
 
 ```text
 index.md
@@ -59,9 +59,9 @@ api-examples.md
 ```
 
 4. 配置 Nginx 指向 `.vitepress/dist` 目录，使用 `location /` 访问 VitePress 站点。
-    
+   
 5. 构建 VitePress：
-    
+   
 
 ```bash
 yarn vitepress build
@@ -70,9 +70,9 @@ yarn vitepress build
 **坑**：
 
 - 之前使用 VuePress 命令构建，报错 `The bundler or theme option is missing`，解决方法：确认使用 **VitePress** 而不是 VuePress。
-    
+  
 - 构建时 `.user.ini` 文件权限问题会报 `EPERM`，解决方法：确保构建目录可写，或清理旧文件：
-    
+  
 
 ```bash
 rm -rf .vitepress/dist/*
@@ -93,11 +93,11 @@ rsync -avz --exclude 'node_modules' --exclude '.vitepress/dist' ./ user@server:/
 **排除目录**：
 
 - `node_modules/`
-    
+  
 - `.vitepress/dist/`（构建产物，无需同步）
-    
+  
 - 可按需排除 `.cache` 或日志文件
-    
+  
 
 ---
 
@@ -124,7 +124,33 @@ yarn vitepress build
 
 ###### 六级标题
 
-看看是不是默认的目录只显示2-3级。
+看看是不是默认的目录只显示2-3级。显示2-3也刚好，全显示了反而杂乱
+
+### 代码
+
+MDX测试
+
+```js "return true;" ins="插入" del="删除"
+function demo() {
+  console.log('这是插入以及删除类型的标记');
+  // 返回语句使用默认标记类型
+  return true;
+}
+```
+
+代码带标题
+
+```bash title="安装依赖…"
+npm install
+```
+
+### 插图之图床
+
+![vaultwarden-backup.service.svg](https://img.isrv.cn/code/vaultwarden-backup.service.svg)
+
+[跳转文章不带后缀](../guides/001)
+
+[跳转文章带md后缀](../guides/001.md)
 
 ---
 
@@ -165,7 +191,7 @@ Updates were rejected because the remote contains work that you do not have loca
 解决方法：
 
 1. **安全合并**（推荐）：
-    
+   
 
 ```bash
 git pull --rebase origin main
@@ -176,7 +202,7 @@ git push -u origin main
 ```
 
 2. **强制覆盖**（谨慎）：
-    
+   
 
 ```bash
 git push -u origin main --force
@@ -189,9 +215,9 @@ git push -u origin main --force
 ### 4.4 rebase 冲突处理
 
 - 冲突文件会包含 `<<<<<<< HEAD` 等标记
-    
+  
 - 手动修改内容，然后：
-    
+  
 
 ```bash
 git add <conflict_file>
@@ -222,28 +248,28 @@ export default defineConfig({
 **注意**：
 
 - 如果没有 Git 仓库或本地未提交，`lastUpdated` 不会生效
-    
+  
 - 写在 Markdown frontmatter 的 `lastUpdated` 是无效的
-    
+  
 - 建议本地提交 → 同步到服务器 → 构建，这样更新时间才会显示
-    
+  
 
 ---
 
 ## ✅ 总结
 
 - VitePress 需要 Node >=18
-    
+  
 - 构建目录权限要正确，`.vitepress/dist` 可写
-    
+  
 - rsync 排除 `node_modules` 和构建产物目录
-    
+  
 - Git 在服务器用 root 时注意 `safe.directory`
-    
+  
 - lastUpdated 依赖 Git 历史，前端 frontmatter 不生效
-    
+  
 - GitHub 推送遇到冲突优先 `pull --rebase`，避免用 `--force`
-    
+  
 
 ---
 
