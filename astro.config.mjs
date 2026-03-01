@@ -24,9 +24,9 @@ export default defineConfig({
 					autogenerate: { directory: 'reference' },
 				},
 			],
-			// editLink: {
-			// 	baseUrl: 'https://github.com/withastro/starlight/edit/main/',
-			// },
+			editLink: {
+				baseUrl: 'https://github.com/luoxding/astro-docs/edit/main/',
+			},
 			//   footer: {
 			//     copyright:
 			//       '© 2026 Ding · 服务器知识库 · Powered by Astro & Starlight',

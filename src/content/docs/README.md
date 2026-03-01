@@ -4,20 +4,23 @@ description: A guide in my new Starlight docs site.
 sidebar:
   label: 简介
 slug: readme
+lastUpdated: 2026-02-22
 ---
 
-## 概要
+## 概要2
 
 本站主要记录我多年来的各种学习笔记，其中大多数为电脑笔记，而这又是绝大部分是服务器的应用笔记记录。
 
 ### Path
 - Local: `/home/ding/Documents/www`
 - Remote: `us:/opt/server/astro-docs`
-- Site: `https://docs.isrv.cn/`
-- GitHub: `https://github.com/luoxding/docs-astro`
+- Site: https://docs.isrv.cn/
+- GitHub: https://github.com/luoxding/astro-docs
 
 ### Build
+
 `astro-publish.sh `
+
 ```bash
 #!/bin/bash
 set -e
