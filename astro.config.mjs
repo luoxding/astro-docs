@@ -72,7 +72,7 @@ export default defineConfig({
 						{ label: "生活见闻", link: "/life-notes" }
 					]
 				}
-			]
+			],
 			plugins: [
 				starlightScrollToTop({
 					// Button position
