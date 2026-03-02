@@ -9,6 +9,7 @@ export default defineConfig({
 		starlight({
 			title: '时空知识库',
 			favicon: '/images/icons8-leaf-64.png',
+			lastUpdated: true,
 			social: [
 				{
 					icon: 'github',
