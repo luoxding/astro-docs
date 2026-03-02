@@ -5,6 +5,10 @@ slug: reading-guide
 
 这是 阅读指南 的初始内容。
 
+1.7M本地图片，看加载情况
+
+![大熊猫](/images/daxiongmao.png)
+
 笔记规范化
 
 ![phenix.png](https://img.isrv.cn/phenix.png)
