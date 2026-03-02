@@ -1,8 +1,11 @@
 ---
 title: 样式测试项目
+tableOfContents:
+  minHeadingLevel: 1
+  maxHeadingLevel: 6
 sidebar:
-  label: 测试文章001
-slug: demo/test1
+  label: 样式测试文章
+slug: /test
 ---
 
 好的，我帮你整理一篇文章草稿，总结你在 **VitePress 服务器部署 + Git 同步 + 构建** 过程中踩过的坑，以及 Git 操作经验。文章内容分条清晰，方便你存档和以后查阅。
