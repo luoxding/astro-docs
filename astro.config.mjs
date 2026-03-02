@@ -8,6 +8,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: '时空知识库',
+			locale: 'zh-cn',   // 👈 简体中文
 			favicon: '/images/icons8-leaf-64.png',
 			lastUpdated: true,
 			social: [
@@ -73,8 +74,4 @@ export default defineConfig({
 			//   },
 		}),
 	],
-	// i18n: {
-	// 	locales: ["zh-cn"],
-	// 	defaultLocale: "zh-cn",
-	// },
 });
