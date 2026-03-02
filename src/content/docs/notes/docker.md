@@ -1,6 +1,6 @@
 ---
 title: Docker 应用
-slug: /docker
+slug: docker
 category: nginx
 tags: [nginx, server, reverse-proxy]
 type: tutorial
