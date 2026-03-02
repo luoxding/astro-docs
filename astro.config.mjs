@@ -17,7 +17,7 @@ export default defineConfig({
 					lang: 'zh-CN', // 注意：这里通常建议用标准格式 zh-CN
 				},
 			},
-			favicon: '/images/icons8-leaf-64.png',
+			favicon: '/images/daxiongmao.png',
 			lastUpdated: true,
 			social: [
 				{
