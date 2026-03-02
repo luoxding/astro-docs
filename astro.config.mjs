@@ -71,7 +71,13 @@ export default defineConfig({
 						{ label: "工作记录", link: "/work-notes" },
 						{ label: "生活见闻", link: "/life-notes" }
 					]
+				},
+
+				{
+					label: '参考资料及杂项',
+					autogenerate: { directory: 'reference', collapsed: true },
 				}
+
 			],
 			plugins: [
 				starlightScrollToTop({
