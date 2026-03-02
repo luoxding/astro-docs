@@ -1,9 +1,9 @@
 ---
-title: Nginx 反向代理配置
-slug: /nginx-reverse-proxy
+title: 工作应用
+slug: /work
 category: nginx
 tags: [nginx, server, reverse-proxy]
 type: tutorial
 ---
 
-## kak
+## 容器技术

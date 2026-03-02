@@ -1,6 +1,6 @@
 ---
 title: Nginx 反向代理配置
-slug: /nginx-reverse-proxy
+slug: /life
 category: nginx
 tags: [nginx, server, reverse-proxy]
 type: tutorial
