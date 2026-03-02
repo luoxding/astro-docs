@@ -4,7 +4,7 @@ description: Arch 安装与 KDE 配置记录
 tags: [linux, arch]
 draft: false
 public: true
-slug: linux
+slug: nginx-conf
 updated: 2026-02-28
 ---
 
