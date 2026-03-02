@@ -7,8 +7,7 @@ export default defineConfig({
 	site: 'https://docs.isrv.cn',
 	integrations: [
 		starlight({
-			title: '时空知识库',
-			// locale: 'zh-cn',   // 👈 简体中文
+			title: '知鱼档案',
 			// 1. 设置默认语言
 			defaultLocale: 'zh-cn',
 			// 2. 配置语言字典（root 表示根目录直接使用该语言）
@@ -28,22 +27,52 @@ export default defineConfig({
 				},
 			],
 			sidebar: [
-				// {
-				// label: '简介',
-				// items: [
-				// Each item here is one entry in the navigation menu.
-				{ label: '介绍', slug: 'readme' },
-				// ],
-				// },
 				{
-					label: '指南',
-					autogenerate: { directory: 'guides', collapsed: true },
+					label: "🧭 开始",
+					items: [
+						{ label: "知识地图", link: "/knowledge-map" },
+						{ label: "阅读指南", link: "/reading-guide" }
+					]
 				},
+
 				{
-					label: '参考',
-					autogenerate: { directory: 'reference', collapsed: true },
+					label: "🖥 服务器",
+					items: [
+						{ label: "Linux 基础", link: "/linux-base" },
+						{ label: "系统管理", link: "/system-admin" },
+						{ label: "网络与安全", link: "/network-security" },
+						{ label: "性能优化", link: "/performance" }
+					]
 				},
-			],
+
+				{
+					label: "🚀 部署与运维",
+					items: [
+						{ label: "Docker", link: "/docker-index" },
+						{ label: "Nginx", link: "/nginx-index" },
+						{ label: "数据库", link: "/database-index" },
+						{ label: "CI/CD", link: "/cicd-index" }
+					]
+				},
+
+				{
+					label: "🛠 工具与应用",
+					items: [
+						{ label: "开发工具", link: "/dev-tools" },
+						{ label: "服务器面板", link: "/panel-tools" },
+						{ label: "常用软件记录", link: "/software-notes" }
+					]
+				},
+
+				{
+					label: "📖 个人记录",
+					items: [
+						{ label: "学习笔记", link: "/study-notes" },
+						{ label: "工作记录", link: "/work-notes" },
+						{ label: "生活见闻", link: "/life-notes" }
+					]
+				}
+			]
 			plugins: [
 				starlightScrollToTop({
 					// Button position
