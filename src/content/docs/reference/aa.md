@@ -4,6 +4,7 @@ description: A reference page in my new Starlight docs site.
 sidebar:
   order: 4
 slug: the-latex8
+draft: true
 ---
 
 Reference pages are ideal for outlining how things work in terse and clear terms.

@@ -3,6 +3,7 @@ title: 关于此项目
 sidebar:
   label: Aboutss fdsa
 slug: about
+draft: true
 ---
 
 
