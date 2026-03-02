@@ -75,7 +75,7 @@ export default defineConfig({
 
 				{
 					label: '参考资料及杂项',
-					autogenerate: { directory: 'reference', collapsed: true },
+					autogenerate: { directory: 'reference', collapsed: false},
 				}
 
 			],
