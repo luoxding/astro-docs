@@ -8,7 +8,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: '时空知识库',
-			favicon: '/images/fish.png',
+			favicon: '/images/icons8-leaf-64.png',
 			social: [
 				{
 					icon: 'github',
