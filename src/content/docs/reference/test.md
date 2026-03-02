@@ -148,6 +148,13 @@ npm install
 
 ![vaultwarden-backup.service.svg](https://img.isrv.cn/code/vaultwarden-backup.service.svg)
 
+## 插入本地图片
+
+![鱼儿](/images/fish.png) ![鱼儿彩](/images/icons8-fish-64.png)
+
+代码图片
+![code](/images/screen_20251231_000417.png)
+
 ## 双层slug
 
 1. [跳转文章不带后缀](../guides/001)
