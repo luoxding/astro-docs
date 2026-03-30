@@ -10,8 +10,6 @@ REMOTE_PROJECT_DIR="/opt/server/astro-docs"
 REMOTE_RELEASE_DIR="/opt/server/releases"
 SITE_DIR="/opt/1panel/www/sites/docs.isrv.cn/index"
 
-# 国内服务器：建议写真实 SSH 登录地址，不要依赖别名
-#CN_SERVER="ubuntu@YOUR_CN_SERVER_IP_OR_HOSTNAME"
 CN_SERVER="root@122.51.240.4"
 CN_SITE_DIR="/opt/1panel/www/subpath/docs"
 
@@ -71,10 +69,10 @@ rm -rf "$SITE_DIR"/*
 cp -r "\$NEW_RELEASE/"* "$SITE_DIR/"
 
 echo "===== Step 6: Ensure CN target dir exists ====="
-ssh "$CN_SERVER" "mkdir -p '$CN_SITE_DIR'"
+ssh -n "$CN_SERVER" "mkdir -p '$CN_SITE_DIR'"
 
 echo "===== Step 7: Rsync to CN Server ====="
-rsync -avz --delete "$SITE_DIR"/ "$CN_SERVER:$CN_SITE_DIR/"
+rsync -avz --delete --rsh="ssh -n" "$SITE_DIR"/ "$CN_SERVER:$CN_SITE_DIR/"
 
 echo "===== Step 8: CN sync finished ====="
 EOF
