@@ -68,13 +68,13 @@ echo "===== Step 5: Deploy on remote site dir ====="
 rm -rf "$SITE_DIR"/*
 cp -r "\$NEW_RELEASE/"* "$SITE_DIR/"
 
-echo "===== Step 6: Ensure CN target dir exists ====="
-ssh -n "$CN_SERVER" "mkdir -p '$CN_SITE_DIR'"
+echo "===== Step 6: Rsync to CN Server ====="
+rsync -avz --delete \
+  -e "ssh -T" \
+  --rsync-path="mkdir -p '$CN_SITE_DIR' && /usr/bin/rsync" \
+  "$SITE_DIR"/ "$CN_SERVER:$CN_SITE_DIR/"
 
-echo "===== Step 7: Rsync to CN Server ====="
-rsync -avz --delete --rsh="ssh -n" "$SITE_DIR"/ "$CN_SERVER:$CN_SITE_DIR/"
-
-echo "===== Step 8: CN sync finished ====="
+echo "===== Step 7: CN sync finished ====="
 EOF
 }
 
