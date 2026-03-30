@@ -11,7 +11,7 @@ REMOTE_RELEASE_DIR="/opt/server/releases"       # 海外服务器 release 目录
 SITE_DIR="/opt/1panel/www/sites/docs.isrv.cn/index"   # 海外服务器站点目录
 
 # 新增：国内服务器与目标目录
-CN_SERVER="tr"
+CN_SERVER="root@122.51.240.4"
 CN_SITE_DIR="/opt/1panel/www/subpath/docs"
 
 BRANCH="main"                                   # Git 分支
