@@ -13,6 +13,10 @@ slug: reading-guide
 
 ![大熊猫](/docs/images/daxiongmao.png)
 
+新的图床图片
+
+![IMG_20251022_144542.jpg](https://img.isrv.cn/IMG_20251022_144542.jpg)
+
 笔记规范化
 
 ![phenix.png](https://img.isrv.cn/phenix.png)
