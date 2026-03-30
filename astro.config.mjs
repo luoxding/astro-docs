@@ -6,7 +6,7 @@ import starlightScrollToTop from 'starlight-scroll-to-top';
 export default defineConfig({
 	//site: 'https://docs.isrv.cn',
 	base: '/docs',
-    site: 'https://www.isrv.cn',
+    site: 'https://www.isrv.cn/docs/',
 	integrations: [
 		starlight({
 			title: '知鱼档案',
