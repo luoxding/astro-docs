@@ -4,16 +4,19 @@ set -e
 ###################################
 # 配置区
 ###################################
-# LOCAL_DIR="$HOME/Documents/www/docs"          # 本地 Obsidian 笔记/配置目录
-LOCAL_DIR="$HOME/www/astro-docs"          # 本地 Obsidian 笔记/配置目录
-REMOTE_SERVER="us"                             # 远程服务器别名或IP
-# REMOTE_SERVER="root@docs.isrv.cn"                             # 远程服务器别名或IP
-REMOTE_PROJECT_DIR="/opt/server/astro-docs"   # 服务器项目目录
-REMOTE_RELEASE_DIR="/opt/server/releases"     # 服务器 release 目录
-SITE_DIR="/opt/1panel/www/sites/docs.isrv.cn/index" # 1Panel site 根目录
-BRANCH="main"                                  # Git 分支
-KEEP_RELEASES=5                                # 保留历史 release 数量
-USE_REMOTE_BUILD=true                           # true 在服务器构建，false 桌面构建
+LOCAL_DIR="$HOME/www/astro-docs"                # 本地项目目录
+REMOTE_SERVER="us"                              # 海外构建服务器别名或IP
+REMOTE_PROJECT_DIR="/opt/server/astro-docs"     # 海外服务器项目目录
+REMOTE_RELEASE_DIR="/opt/server/releases"       # 海外服务器 release 目录
+SITE_DIR="/opt/1panel/www/sites/docs.isrv.cn/index"   # 海外服务器站点目录
+
+# 新增：国内服务器与目标目录
+CN_SERVER="tr"
+CN_SITE_DIR="/opt/1panel/www/subpath/docs"
+
+BRANCH="main"                                   # Git 分支
+KEEP_RELEASES=5                                 # 保留历史 release 数量
+USE_REMOTE_BUILD=true                           # true 在服务器构建，false 本地构建
 
 ###################################
 # 功能函数
@@ -22,12 +25,12 @@ git_push() {
     echo "===== Git Push ====="
     git add .
     git commit -m "${1:-update}"
-    git push origin $BRANCH
+    git push origin "$BRANCH"
 }
 
 git_pull() {
     echo "===== Git Pull ====="
-    git pull origin $BRANCH
+    git pull origin "$BRANCH"
 }
 
 build_remote() {
@@ -35,10 +38,8 @@ build_remote() {
     ssh "$REMOTE_SERVER" bash -e -s <<EOF
 set -e
 
-# nvm安装的node需要添加这条
-
 export NVM_DIR="/root/.nvm"
-[ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
+[ -s "\$NVM_DIR/nvm.sh" ] && . "\$NVM_DIR/nvm.sh"
 
 cd "$REMOTE_PROJECT_DIR"
 git fetch origin
@@ -63,10 +64,13 @@ ls -dt */ | tail -n +$((KEEP_RELEASES+1)) | xargs -r rm -rf
 rm -rf "$SITE_DIR"/*
 cp -r "\$NEW_RELEASE/"* "$SITE_DIR/"
 
-echo "===== Deploy Success on Server ====="
+echo "===== Sync to CN Server ====="
+ssh "$CN_SERVER" "mkdir -p '$CN_SITE_DIR'"
+rsync -avz --delete "$SITE_DIR"/ "$CN_SERVER:$CN_SITE_DIR/"
+
+echo "===== Deploy Success on Remote + CN Server ====="
 EOF
 }
-
 
 build_local() {
     echo "===== 本地构建 ====="
@@ -76,27 +80,17 @@ build_local() {
     echo "本地构建完成: dist/"
 }
 
-## 目前已有git，暂不用rsync
-# sync_to_server() {
-#     echo "===== 同步笔记到服务器 ====="
-#     rsync -avz --delete "$LOCAL_DIR/src/content/docs/" "$REMOTE_SERVER:$REMOTE_PROJECT_DIR/src/content/docs/"
-# }
-
 ###################################
 # 主流程
 ###################################
-# 1. 可选 git pull
+cd "$LOCAL_DIR"
+
 read -p "是否执行 git pull? [y/N]: " yn
 [[ "$yn" =~ ^[Yy]$ ]] && git_pull
 
-# 2. 可选 git push
 read -p "是否执行 git push? [y/N]: " yn
 [[ "$yn" =~ ^[Yy]$ ]] && git_push "update from local"
 
-# 3. 同步笔记
-# sync_to_server
-
-# 4. 构建
 if [ "$USE_REMOTE_BUILD" = true ]; then
     build_remote
 else

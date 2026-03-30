@@ -9,6 +9,10 @@ slug: reading-guide
 
 ![大熊猫](/images/daxiongmao.png)
 
+新增docs
+
+![大熊猫](/docs/images/daxiongmao.png)
+
 笔记规范化
 
 ![phenix.png](https://img.isrv.cn/phenix.png)
