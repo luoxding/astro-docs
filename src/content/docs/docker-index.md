@@ -8,4 +8,4 @@ slug: docker-index
 
 ## 自托管服务
 
-- [Vaultwarden  自建密码管理服务](/vaultwarden)
+- [Vaultwarden  自建密码管理服务](/docs/vaultwarden)

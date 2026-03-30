@@ -24,4 +24,4 @@ Writing a good guide requires thinking about what your users are trying to do.
 
 ## 这个直接指向slug
 
-5. [哈哈](/america88)
+5. [哈哈](/docs/america88)
