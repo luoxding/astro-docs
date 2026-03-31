@@ -71,7 +71,8 @@ export default defineConfig({
 					items: [
 						{ label: "学习笔记", link: "/study-notes" },
 						{ label: "工作记录", link: "/work-notes" },
-						{ label: "生活见闻", link: "/life-notes" }
+						{ label: "生活见闻", link: "/life-notes" },
+						{ label: "科目资料", link: "./01-ear" }
 					]
 				},
 
