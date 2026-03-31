@@ -23,4 +23,4 @@ slug: knowledge-map
   - [Docker 笔记](/docs/docker-index)
     - [Vaultwarden  自建密码管理服务](/docs/vaultwarden)
     - [基于 rclone + systemd + 本地索引 JSON 的自建图床完整方案](/docs/rclone-systemd-figbed) slug加docs
-    - [相对路径测试](./guides/example) 相对路径
+    - [相对路径测试](../guides/example) 相对路径
