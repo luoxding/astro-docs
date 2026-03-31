@@ -2,7 +2,7 @@
 title: Arch Linux 安装全过程
 description: Arch 安装与 KDE 配置记录
 tags: [linux, arch]
-draft: true
+draft: false
 public: true
 slug: nginx-conf
 updated: 2026-02-28
