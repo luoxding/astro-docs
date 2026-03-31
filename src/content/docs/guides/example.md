@@ -18,7 +18,9 @@ Writing a good guide requires thinking about what your users are trying to do.
 
 ## 以下这两个不带slug
 
-3. [跳转文章不带后缀](../guides/002)
+3. [跳转文章不带后缀](../../guides/002) 再加一层上级
+
+3. [使用定义的slug](/002-test) 使用slug
 
 4. [跳转文章带md后缀](../guides/002.md)
 
